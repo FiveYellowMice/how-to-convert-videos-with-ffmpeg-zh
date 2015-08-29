@@ -40,7 +40,7 @@ FFmpeg 还是一个[自由软件][]，因为自由，所以其他人可以非常
 
 让我们来看一下这个耻辱柱吧。  
 里面出现了 Baofeng Storm ，也就是大家所熟知的**暴风影音**。  
-还有 QQPlayer ，也就是**QQ 影音**。  
+还有 QQPlayer ，也就是 **QQ 影音**。  
 当然也少不了广为人知的 Format Factory ，也就是**格式工厂**。
 
 再看看[这篇文章](https://www.byvoid.com/zhs/blog/qq-player-ffmpeg-gpl)，他分析的比我透彻的多。  
