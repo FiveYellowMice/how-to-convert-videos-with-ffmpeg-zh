@@ -1,17 +1,17 @@
 # 写在前面
-## 1. 丑话说在前头
+## 1.	丑话说在前头
 
 我知道这样可能使你的心情不好，但是为了防止我受到不明不白的诋毁，我还是得写下这一章。
 
 如果你心中怀着以下想法之一，并且觉得这样是十分正确的，请点击右上角的 X ：
 
-- 我 XXXX 用的挺好的，管它做了什么事，能用就行。
-- 这么多人用的东西竟然没有中文，看来它根本不重视中国市场。
-- 好麻烦啊，我只想要现成的。
-- 上个世纪八国联军……
-- 你是中国人不？是就支持国产，抵制外国货！
-- 怎么这么多链接打不开？
-- 啊，f墙？麻不麻烦啊，你直接把内容复制过来呗，我懒。
+-	我 XXXX 用的挺好的，管它做了什么事，能用就行。
+-	这么多人用的东西竟然没有中文，看来它根本不重视中国市场。
+-	好麻烦啊，我只想要现成的。
+-	上个世纪八国联军……
+-	你是中国人不？是就支持国产，抵制外国货！
+-	怎么这么多链接打不开？
+-	啊，f墙？麻不麻烦啊，你直接把内容复制过来呗，我懒。
 
 没符合上面中的任何一条？太好了！你应该是个拥有逻辑思维的人，我相信大部分人都是。
 
@@ -19,18 +19,18 @@
 
 说完了上面不适合的，我在来说说适合的人群：
 
-- 想学会怎么转视频格式、编码的人。
-- 想在视频网站上做出优秀视频的人。
-- 视频资源收集控。
-- 想了解关于数字媒体的知识，但以前从未接触过的人。
-- 知道国产毒瘤们的恶劣事迹，但苦于找不到替代品的人。
-- 不希望自己的东西被别人——或者别人编写的程序——掌控的人。
+-	想学会怎么转视频格式、编码的人。
+-	想在视频网站上做出优秀视频的人。
+-	视频资源收集控。
+-	想了解关于数字媒体的知识，但以前从未接触过的人。
+-	知道国产毒瘤们的恶劣事迹，但苦于找不到替代品的人。
+-	不希望自己的东西被别人——或者别人编写的程序——掌控的人。
 
 其实不符合也没关系，**你要是有兴趣，我当然欢迎你继续阅读下去！**
 
 --------------
 
-## 2. FFmpeg 是什么，我为什么要用它？
+## 2.	FFmpeg 是什么，我为什么要用它？
 
 [FFmpeg][] 是一个多媒体编解码器库，并提供了命令行前端。许多软件都使用了 FFmpeg 来进行音频和视频的编解码，特别是像[MPlayer][]这样的多媒体播放器。  
 FFmpeg 还是一个[自由软件][]，因为自由，所以其他人可以非常方便的在他们的软件中使用 FFmpeg 的东西。如果没有 FFmpeg ，许多播放器都要自己重新写解码器。有了 FFmpeg ，那些游戏开发者只要在他们的程序中包含 FFmpeg 的视频解码模块就可以播放视频了，而将更多的精力放在游戏本身内容上面。
@@ -55,12 +55,12 @@ FFmpeg 还是一个[自由软件][]，因为自由，所以其他人可以非常
 命令的方式，也能够写入脚本中，高效的完成批量任务。  
 我想你已经迫不及待了，那么就开始阅读[第 2 章](02-download-and-install.md)吧！
 
-[FFmpeg]: https://zh.wikipedia.org/wiki/FFmpeg
-[MPlayer]: https://zh.wikipedia.org/wiki/MPlayer
-[自由软件]: https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6
-[GNU 宽通用公共许可证]: https://zh.wikipedia.org/wiki/GNU%E5%AE%BD%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81
-[耻辱柱]: https://github.com/FFmpeg/web/blob/master/src/shame
-[SMPlayer]: http://smplayer.sourceforge.net/zh/info
-[VLC]: http://www.videolan.org/vlc/
-[Audacious]: http://audacious-media-player.org/
-[MeGUI]: http://sourceforge.net/projects/megui/
+[FFmpeg]:	https://zh.wikipedia.org/wiki/FFmpeg
+[MPlayer]:	https://zh.wikipedia.org/wiki/MPlayer
+[自由软件]:	https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6
+[GNU 宽通用公共许可证]:	https://zh.wikipedia.org/wiki/GNU%E5%AE%BD%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81
+[耻辱柱]:	https://github.com/FFmpeg/web/blob/master/src/shame
+[SMPlayer]:	http://smplayer.sourceforge.net/zh/info
+[VLC]:	http://www.videolan.org/vlc/
+[Audacious]:	http://audacious-media-player.org/
+[MeGUI]:	http://sourceforge.net/projects/megui/
