@@ -7,7 +7,7 @@
 1.	[写在前面](01-write-in-front.md)
 	1.	丑话说在前头
 	2.	FFmpeg 是什么，我为什么要用它？
-2.	下载与安装
+2.	[下载与安装](02-download-and-install.md)
 	1.	Linux
 	2.	Mac OS X&reg;
 	3.	Microsoft&reg; Windows&reg;
