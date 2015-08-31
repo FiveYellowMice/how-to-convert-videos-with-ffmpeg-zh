@@ -58,7 +58,7 @@
 
 然后访问 <http://ffmpeg.zeranoe.com/builds/> ，你可以看到许多灰色的按钮。如果你的电脑是 32 位，点最上面一行左边的按钮 "Download FFmpeg git-xxxxxxx 32-bit Static" ，如果是 64 位，点右边的 "Download FFmpeg git-xxxxxxx 64-bit Static" 。解压。
 
-双击 ff-prompt.bat ，如果出现了如下的界面，并且最后一行可以进行输入，则表示没有问题。
+双击 ff-prompt.bat ，如果出现了如下的界面，并且最后一行可以进行输入，则表示没有问题。  
 ![ff-prompt](image/windows-ff-prompt.png)
 
 它是一个绿色软件，你可以直接在这个窗口中执行接下来会讲到的命令。但为了方便，我推荐你进行“手动安装”。
@@ -74,3 +74,7 @@
 所以转码工作最好还是在电脑上进行。
 
 [树莓派](https://zh.wikipedia.org/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE)是一个特殊的存在，它并不是一台如我们想象中一样的 x86 电脑，但是它可以当作一台性能和能耗较低的电脑来使用。它预装的操作系统是 Raspbian , Debian 的一个衍生版，在它上面的安装请参考上面关于 Linux 的说明。
+
+------------------------
+
+安装好了，一切就绪？那么开始[第 3 章](03-execute.md)的阅读吧！
