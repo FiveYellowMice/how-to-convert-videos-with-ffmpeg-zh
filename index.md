@@ -12,7 +12,7 @@
 	2.	Mac OS X&reg;
 	3.	Microsoft&reg; Windows&reg;
 	4.	手机、平板、树莓派……
-3.	运行
+3.	[运行](03-execute.md)
 	1.	是这个黑黑的窗口吗？
 	2.	查看帮助
 	3.	“选项”与“参数”
