@@ -241,3 +241,64 @@
 最后的 `b.webm` 是一个固有的参数，它不属于任何选项，但是在 FFmpeg 中它被要求写上，因为这就是转码后输出的文件名，它一定要写在最后。看看帮助中的 `usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...` ，我们就能找到我们为什么要这样做——名叫 `outfile` （也就是输出文件）的参数要放在最后面。
 
 **别的程序不一定需要这样的参数，也不一定符合这一节的规律，这里只讲 FFmpeg 。**
+
+---------------------
+
+## 4.	支持哪些格式？
+
+你可能有些踌躇，因为你以前从来没有听说过这个叫 FFmpeg 的软件。“它应该很小众吧”你也许会这样想，“那么支持的媒体格式也很有限咯？”
+
+在第一章我就有描述， FFmpeg 是一个被广泛使用的多媒体编码器库，有多广泛呢？广泛到除了某些财大气粗的商业公司，几乎所有的需要用到媒体的软件都用到了它。之所以你没听说过它的名字，是因为它通常都藏在后端。
+
+现在你不会怀疑 FFmpeg 的支持的格式数量了吧？几乎所有。
+
+跟据 `ffmpeg -help` 的指示，要查看所有支持的“封装格式”，输入 `ffmpeg -formats` ，然后我们会得到一大堆输出，因为实在太长了，我只截一小段给大家看一下：
+
+	File formats:
+	D. = Demuxing supported
+	.E = Muxing supported
+	--
+	E 3g2             3GP2 (3GPP2 file format)
+	E 3gp             3GP (3GPP file format)
+	D  4xm             4X Technologies
+	E a64             a64 - video for Commodore 64
+	D  aac             raw ADTS AAC (Advanced Audio Coding)
+	DE ac3             raw AC-3
+	D  act             ACT Voice file format
+	D  adf             Artworx Data Format
+	D  adp             ADP
+	E adts            ADTS AAC (Advanced Audio Coding)
+	DE adx             CRI ADX
+	D  aea             MD STUDIO audio
+	D  afc             AFC
+	DE aiff            Audio IFF
+	DE alaw            PCM A-law
+	D  alias_pix       Alias/Wavefront PIX image
+	DE alsa            ALSA audio output
+
+我们能看见许多我们熟悉的格式以及更多不熟悉的格式。
+
+接下来还有他支持的编解码器 (codec) ，按照帮助，我们要输入 `ffmpeg -codecs` ，以下是输出的一部分：
+
+	Codecs:
+	D..... = Decoding supported
+	.E.... = Encoding supported
+	..V... = Video codec
+	..A... = Audio codec
+	..S... = Subtitle codec
+	...I.. = Intra frame-only codec
+	....L. = Lossy compression
+	.....S = Lossless compression
+	\-------
+	D.VI.. 012v                 Uncompressed 4:2:2 10-bit
+	D.V.L. 4xm                  4X Movie
+	D.VI.S 8bps                 QuickTime 8BPS video
+	.EVIL. a64_multi            Multicolor charset for Commodore 64 (encoders: a64multi )
+	.EVIL. a64_multi5           Multicolor charset for Commodore 64, extended with 5th color (colram) (encoders: a64multi5 )
+	D.V..S aasc                 Autodesk RLE
+	D.VIL. aic                  Apple Intermediate Codec
+	DEVI.S alias_pix            Alias/Wavefront PIX image
+	DEVIL. amv                  AMV Video
+	D.V.L. anm                  Deluxe Paint Animation
+
+这些就是你电脑中 FFmpeg 所支持的格式和编码了，够多吧？
