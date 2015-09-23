@@ -8,16 +8,16 @@
 	1.	[丑话说在前头](01-write-in-front.md#丑话说在前头)
 	2.	[FFmpeg 是什么，我为什么要用它？](01-write-in-front.md#ffmpeg-是什么我为什么要用它)
 2.	[下载与安装](02-download-and-install.md)
-	1.	Linux
-	2.	Mac OS X&reg;
-	3.	Microsoft&reg; Windows&reg;
-	4.	手机、平板、树莓派……
+	1.	[Linux](02-download-and-install.md#linux)
+	2.	[Mac OS X&reg;](02-download-and-install.md#mac-os-x)
+	3.	[Microsoft&reg; Windows&reg;](02-download-and-install.md#microsoft-windows)
+	4.	[手机、平板、树莓派……](02-download-and-install.md#手机平板树莓派)
 3.	[运行](03-execute.md)
-	1.	是这个黑黑的窗口吗？
-	2.	查看帮助
-	3.	“选项”与“参数”
-	4.	支持哪些格式？
-	5.	中文是世界上最美的语言，但是……
+	1.	[是这个黑黑的窗口吗？](03-execute.md#是这个黑黑的窗口吗)
+	2.	[查看帮助](03-execute.md#查看帮助)
+	3.	[“选项”与“参数”](03-execute.md#选项与参数)
+	4.	[支持哪些格式？](03-execute.md#支持哪些格式)
+	5.	[中文是世界上最美的语言，但是……](03-execute.md#中文是世界上最美的语言但是)
 4.	[媒体文件的结构](04-media-file-structure.md)
 5.	[开始转码](05-start-converting.md)
 	1.	简单的文件输入与输出
