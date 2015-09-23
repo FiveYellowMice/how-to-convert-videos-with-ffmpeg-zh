@@ -24,7 +24,7 @@
 输入文件是什么？就是我们要转换的文件呀！比如我在此处要转换的文件叫做 `Tor_Animation_en.mp4` ，我就再往命令行中打 `-i Tor_Animation_en.mp4` 。
 
 在指定了输入文件之后，我们还要指定一个输出文件，不然 FFmpeg 把转换出来的文件保存在哪儿呢？  
-输出文件可以是任何名字，但它的后缀名很关键，[上一章](04-media-file-structure.md)已经讲过，后缀名通常就代表着文件的封装格式。在这个例子中，我想将视频转换为 [Matroska](https://zh.wikipedia.org/wiki/Matroska) 格式，那么我输出文件的后缀名就得是 `.mkv` 。  
+输出文件可以是任何名字，但它的后缀名很关键，[上一章](04-media-file-structure.md)已经讲过，后缀名通常就代表着文件的封装格式。在这个例子中，我想将视频转换为 [Matroska](https://zh.wikipedia.org/wiki/Matroska) 格式（俗称 MKV 格式），那么我输出文件的后缀名就得是 `.mkv` 。  
 最终，我想将文件保存为 `tor.mkv` ，就在命令行后面直接加上这个文件名。
 
 最后，我的命令行上有着这样一条命令：
