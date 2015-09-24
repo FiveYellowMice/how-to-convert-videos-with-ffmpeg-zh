@@ -4,6 +4,9 @@
 本作品采用知识共享 署名-相同方式共享 4.0 国际 许可协议进行许可，你可以在署名并采用相同条款的情况下自由复制、传播、再演绎本作品而无需通知作者。访问 <http://creativecommons.org/licenses/by-sa/4.0/> 查看该许可协议。
 
 ## 目录
+
+没有链接的章节是在此版本中还未写完的部分，如果想要查看最新的开发版本，请访问这个计划的 [GitHub Repository](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 。
+
 1.	[写在前面](01-write-in-front.md)
 	1.	[丑话说在前头](01-write-in-front.md#丑话说在前头)
 	2.	[FFmpeg 是什么，我为什么要用它？](01-write-in-front.md#ffmpeg-是什么我为什么要用它)
@@ -35,4 +38,4 @@
 	1.	H264
 	2.	学会看文档
 9.	不仅能转码
-10.	写在最后
+10.	[写在最后](10-write-in-end.md)
