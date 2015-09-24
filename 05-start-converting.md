@@ -120,4 +120,141 @@ FFmpeg 在出错的时候总会尽它的一切力量来减少你的麻烦，在�
 
 >	人生苦短，我看错误提示。
 
+---------------------
+
 ## 学会看输出
+
+别看 FFmpeg 只有一条命令来让用户完成操作，实际上，它告诉你的信息多的令人惊讶！
+
+在执行了上一节最后给出的命令后，我的终端窗口冒出了大量的字符，但是还没等我看完，就迅速被这样的信息给填满了：
+
+	frame=   28 fps=0.0 q=0.0 size=       2kB time=00:00:01.49 bitrate=  11.3kbits/s
+	frame=   30 fps= 17 q=-0.0 size=      13kB time=00:00:01.49 bitrate=  71.1kbits/
+	frame=   34 fps= 15 q=-0.0 size=      20kB time=00:00:01.66 bitrate=  99.9kbits/
+	frame=   38 fps= 13 q=-0.0 size=      31kB time=00:00:01.83 bitrate= 138.1kbits/
+	frame=   42 fps= 12 q=-0.0 size=      40kB time=00:00:02.00 bitrate= 165.1kbits/
+	frame=   46 fps= 11 q=-0.0 size=      49kB time=00:00:02.17 bitrate= 185.4kbits/
+	frame=   50 fps= 10 q=-0.0 size=      57kB time=00:00:02.34 bitrate= 199.3kbits/
+	frame=   54 fps= 10 q=-0.0 size=      63kB time=00:00:02.51 bitrate= 204.9kbits/
+	frame=   58 fps=9.5 q=-0.0 size=      74kB time=00:00:02.68 bitrate= 226.2kbits/
+	frame=   62 fps=9.2 q=-0.0 size=      85kB time=00:00:02.68 bitrate= 260.5kbits/
+	frame=   65 fps=8.8 q=-0.0 size=      92kB time=00:00:02.85 bitrate= 264.9kbits/
+
+这些是什么玩意儿？我没有看到我的进度条，也没有百分比，难道我要在这里干等着，不知道什么时候转码才会结束吗？
+
+FFmpeg 确实不会显示进度条和百分比，不过，它会给你比进度条和百分比还要多的信息。
+
+1.	最左边的 `frame=   65` 是转码所进行到的[帧](https://zh.wikipedia.org/wiki/%E5%B8%A7)数，显示 65 就表示现在已经转到了第 65 帧。
+2.	第二个 `fps=8.8` 中的 FPS 就是 **F**rame **p**er **S**econd ，也就是现在电脑每秒所处理的帧的数量。注意这个数字跟视频的帧率并无关系。
+3.	~~其实我也不知道后面那个 `q=-0.0` 是什么意思，大家不要来打我呀。~~
+4.	接下来的 `size=      92kB` 表示现在已经转换出来的视频的体积，这个数字只会越变越大啊。
+5.	第五个 `time=00:00:02.85` 顾名思义就是时间了，它是已经转换出来的视频的时间。在我看来，它也是一个比百分比进度条更加精准的进度显示。
+
+如果你认为这么多信息是“无用的”，那么只要看 `time` 这一栏就好，我想你应该知道你原来的视频有多长，那么从已经转换的时间应该能看出你已经完成了多少了吧？
+
+话说回来，在我的终端被这些信息刷屏之前，出来的一大堆~~看起来很不错的~~文字是什么？  
+让我们用鼠标滚轮滚回去看看。
+
+	ffmpeg version 2.8 Copyright (c) 2000-2015 the FFmpeg developers
+	built with gcc 5.2.0 (GCC)
+	  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripp
+	ing --enable-avisynth --enable-avresample --enable-fontconfig --enable-gnutls --
+	enable-gpl --enable-ladspa --enable-libass --enable-libbluray --enable-libfreety
+	pe --enable-libfribidi --enable-libgsm --enable-libmodplug --enable-libmp3lame -
+	-enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enab
+	le-libopus --enable-libpulse --enable-libschroedinger --enable-libsoxr --enable-
+	libspeex --enable-libssh --enable-libtheora --enable-libv4l2 --enable-libvorbis 
+	--enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libx
+	vid --enable-shared --enable-version3 --enable-x11grab
+	  libavutil      54. 31.100 / 54. 31.100
+	  libavcodec     56. 60.100 / 56. 60.100
+	  libavformat    56. 40.101 / 56. 40.101
+	  libavdevice    56.  4.100 / 56.  4.100
+	  libavfilter     5. 40.101 /  5. 40.101
+	  libavresample   2.  1.  0 /  2.  1.  0
+	  libswscale      3.  1.101 /  3.  1.101
+	  libswresample   1.  2.101 /  1.  2.101
+	  libpostproc    53.  3.100 / 53.  3.100
+	Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'Tor_Animation_en.mp4':
+	  Metadata:
+	    major_brand     : mp42
+	    minor_version   : 0
+	    compatible_brands: mp42isomavc1
+	    creation_time   : 2015-03-12 15:36:45
+	    encoder         : HandBrake 0.9.5 2011010300
+	  Duration: 00:02:17.45, start: 0.000000, bitrate: 842 kb/s
+	    Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709)
+	, 1920x1080 [SAR 1:1 DAR 16:9], 674 kb/s, 24 fps, 24 tbr, 90k tbn, 180k tbc (def
+	ault)
+	    Metadata:
+	      creation_time   : 2015-03-12 15:36:45
+	      encoder         : JVT/AVC Coding
+	    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, flt
+	p, 163 kb/s (default)
+	    Metadata:
+	      creation_time   : 2015-03-12 15:36:45
+	x265 [info]: HEVC encoder version 1.7
+	x265 [info]: build info [Linux][GCC 5.1.0][64 bit] 8bpp
+	x265 [info]: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX
+	x265 [info]: Main profile, Level-4 (Main tier)
+	x265 [info]: Thread pool created using 4 threads
+	x265 [info]: frame threads / pool features       : 2 / wpp(17 rows)
+	x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+	x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+	x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 2
+	x265 [info]: Keyframe min / max / scenecut       : 24 / 250 / 40
+	x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+	x265 [info]: b-pyramid / weightp / weightb / refs: 1 / 1 / 0 / 3
+	x265 [info]: AQ: mode / str / qg-size / cu-tree  : 1 / 1.0 / 64 / 1
+	x265 [info]: Rate Control / qCompress            : CRF-28.0 / 0.60
+	x265 [info]: tools: rd=3 psy-rd=0.30 signhide tmvp strong-intra-smoothing
+	x265 [info]: tools: deblock sao
+	Output #0, matroska, to 'tor.mkv':
+	  Metadata:
+	    major_brand     : mp42
+	    minor_version   : 0
+	    compatible_brands: mp42isomavc1
+	    encoder         : Lavf56.40.101
+	    Stream #0:0(und): Video: hevc (libx265), yuv420p, 1920x1080 [SAR 1:1 DAR 16:
+	9], q=2-31, 24 fps, 1k tbn, 24 tbc (default)
+	    Metadata:
+	      creation_time   : 2015-03-12 15:36:45
+	      encoder         : Lavc56.60.100 libx265
+	    Stream #0:1(eng): Audio: aac ([255][0][0][0] / 0x00FF), 48000 Hz, stereo, fl
+	tp, 128 kb/s (default)
+	    Metadata:
+	      creation_time   : 2015-03-12 15:36:45
+	      encoder         : Lavc56.60.100 aac
+	Stream mapping:
+	  Stream #0:0 -> #0:0 (h264 (native) -> hevc (libx265))
+	  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+	Press [q] to stop, [?] for help
+	frame=   28 fps=0.0 q=0.0 size=       2kB time=00:00:01.49 bitrate=  11.3kbits/s
+
+这些数据可有点多啊，我不会把每一句话都作详细说明，只是挑一些用处比较大的讲一下。
+
+上面的版本信息不用管，然后我们能看到一行 `Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'Tor_Animation_en.mp4':` ，显然这下面就是关于第 0 个输入文件的信息了。（别忘了，在 IT 界，许多东西都喜欢以 0 而不是 1 开始计数）
+
+`Duration: 00:02:17.45, start: 0.000000, bitrate: 842 kb/s` 这一行告诉我们这个视频长度是 2 分 17 秒 45 ，从 0.000000 开始，比特率 842 kb/s 。
+
+下面一行很长，不过我们只看前面一段 `Stream #0:0(und): Video: h264` ，它告诉我们， 0 号输入文件的 0 号媒体流，视频流， `h264` 编码。
+
+然后是 `Stream #0:1(eng): Audio: aac` ， 0 号输入文件的 1 号媒体流，音频流， `aac` 编码。
+
+再往下 `x265 [info]` 开头的一大堆，都是 HEVC 的编码程序 `x265` 所给出的信息，看不懂就甭管了。
+
+后面我们就能看到关于输出文件的信息，还有其编码。
+
+接下来重要的信息来了：
+
+	Stream mapping:
+	  Stream #0:0 -> #0:0 (h264 (native) -> hevc (libx265))
+	  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+
+媒体流的分配，很直观，我们能看到输入文件的视频流从 `h264` 转成了 `hevc` ，音频流从 `aac` 还是转成了一样的 `aac` 。从这里你可以快速的检查一下，你是否输入了你想要执行的命令。
+
+哦，还不能忘记最后一条很有用的信息， `Press [q] to stop, [?] for help` ，它告诉你在转码的时候按 q 来中断， ? 来查看帮助。有经验的人可能知道用 Ctrl + C 可以中断，不过那个是强制推出，按 q 是相对自然一些的中断。
+
+按 ? 会出来什么呢？感兴趣的话就自己来探索一下吧。
+
+>	谁掌握了输出，谁就掌握了程序。
