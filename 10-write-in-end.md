@@ -13,7 +13,7 @@
 
 对了，不能忘记收藏[这个计划的 GitHub Repository][github repo]，在这里可以在线阅读这个教程的最新开发版本。顺便，在觉得我写的好的同时，也别忘了点页面有上方的 Star 按钮来给我最简单的鼓励。
 
-FiveYellowMice
+FiveYellowMice  
 Thu, 24 Sep 2015 14:36:49 +0000
 
 [issues]: https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/issues
