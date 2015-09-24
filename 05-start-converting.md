@@ -257,3 +257,5 @@ FFmpeg 确实不会显示进度条和百分比，不过，它会给你比进度�
 ------------------
 
 读到这里，你应该能使用 FFmpeg 来进行简单的转码了，而这个教程的“入门”阶段也完成了。后面的内容依然还在编写中，如果想要查看最新的开发版本，请访问这个计划的 [GitHub Repository](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 。
+
+对了，也看一看[最后一章](10-write-in-end.md)。
