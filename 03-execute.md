@@ -43,29 +43,30 @@
 
 你可以看到像这样的一些输出：
 
-	ffmpeg version 2.7.2 Copyright (c) 2000-2015 the FFmpeg developers
+	ffmpeg version 2.8 Copyright (c) 2000-2015 the FFmpeg developers
 	built with gcc 5.2.0 (GCC)
-	configuration: --prefix=/usr --disable-debug --disable-static --disable-strippin  
-	g --enable-avisynth --enable-avresample --enable-fontconfig --enable-gnutls --en  
-	able-gpl --enable-libass --enable-libbluray --enable-libfreetype --enable-libfri  
-	bidi --enable-libgsm --enable-libmodplug --enable-libmp3lame --enable-libopencor  
-	e_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopus --enabl  
-	e-libpulse --enable-libschroedinger --enable-libsoxr --enable-libspeex --enable-  
-	libssh --enable-libtheora --enable-libv4l2 --enable-libvorbis --enable-libvpx --  
-	enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-share  
-	d --enable-version3 --enable-x11grab
-	libavutil      54. 27.100 / 54. 27.100
-	libavcodec     56. 41.100 / 56. 41.100
-	libavformat    56. 36.100 / 56. 36.100
+	configuration: --prefix=/usr --disable-debug --disable-static --disable-strippin
+	g --enable-avisynth --enable-avresample --enable-fontconfig --enable-gnutls --en
+	able-gpl --enable-ladspa --enable-libass --enable-libbluray --enable-libfreetype
+	 --enable-libfribidi --enable-libgsm --enable-libmodplug --enable-libmp3lame --e
+	nable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable
+	-libopus --enable-libpulse --enable-libschroedinger --enable-libsoxr --enable-li
+	bspeex --enable-libssh --enable-libtheora --enable-libv4l2 --enable-libvorbis --
+	-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvi
+	d --enable-shared --enable-version3 --enable-x11grab
+	libavutil      54. 31.100 / 54. 31.100
+	libavcodec     56. 60.100 / 56. 60.100
+	libavformat    56. 40.101 / 56. 40.101
 	libavdevice    56.  4.100 / 56.  4.100
-	libavfilter     5. 16.101 /  5. 16.101
+	libavfilter     5. 40.101 /  5. 40.101
 	libavresample   2.  1.  0 /  2.  1.  0
 	libswscale      3.  1.101 /  3.  1.101
-	libswresample   1.  2.100 /  1.  2.100
+	libswresample   1.  2.101 /  1.  2.101
 	libpostproc    53.  3.100 / 53.  3.100
 
-`version` 的意思就是“版本”，通过这条命令我们就可以看见 FFmpeg 的版本以及其他的一些信息。  
-从第一行能够看出，我在写这篇文章时，所使用的 FFmpeg 版本是 2.7.2 ，多数情况下你得到的版本都会比我的新，一般情况下新版本都会保持对旧版本的兼容性，所以版本较新通常不会产生问题。  
+`version` 的意思就是“版本”，通过这条命令我们就可以看见 FFmpeg 的版本以及其他的一些信息。
+
+从第一行能够看出，我在写这篇文章时，所使用的 FFmpeg 版本是 2.8 ，多数情况下你得到的版本都会比我的新，一般情况下新版本都会保持对旧版本的兼容性，所以版本较新通常不会产生问题。  
 但如果你使用的版本比我的旧，即使可能大部分操作都不会出现与本教程不同的地方，但最好还是升到最新版本，也就是按照上一章的方式重新下载最新版。
 
 我们现在知道了 FFmpeg 的版本，接下来需要知道它的使用方法—— FFmpeg 内置了十分详尽的帮助说明，我们可以通过这样一条命令来查看它：
@@ -76,25 +77,25 @@
 
 现在我们获得了这样的输出：
 
-	ffmpeg version 2.7.2 Copyright (c) 2000-2015 the FFmpeg developers
+	ffmpeg version 2.8 Copyright (c) 2000-2015 the FFmpeg developers
 	  built with gcc 5.2.0 (GCC)
 	  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripp
 	ing --enable-avisynth --enable-avresample --enable-fontconfig --enable-gnutls --
-	enable-gpl --enable-libass --enable-libbluray --enable-libfreetype --enable-libf
-	ribidi --enable-libgsm --enable-libmodplug --enable-libmp3lame --enable-libopenc
-	ore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopus --ena
-	ble-libpulse --enable-libschroedinger --enable-libsoxr --enable-libspeex --enabl
-	e-libssh --enable-libtheora --enable-libv4l2 --enable-libvorbis --enable-libvpx 
-	--enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-sha
-	red --enable-version3 --enable-x11grab
-	  libavutil      54. 27.100 / 54. 27.100
-	  libavcodec     56. 41.100 / 56. 41.100
-	  libavformat    56. 36.100 / 56. 36.100
+	enable-gpl --enable-ladspa --enable-libass --enable-libbluray --enable-libfreety
+	pe --enable-libfribidi --enable-libgsm --enable-libmodplug --enable-libmp3lame -
+	-enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enab
+	le-libopus --enable-libpulse --enable-libschroedinger --enable-libsoxr --enable-
+	libspeex --enable-libssh --enable-libtheora --enable-libv4l2 --enable-libvorbis 
+	--enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libx
+	vid --enable-shared --enable-version3 --enable-x11grab
+	  libavutil      54. 31.100 / 54. 31.100
+	  libavcodec     56. 60.100 / 56. 60.100
+	  libavformat    56. 40.101 / 56. 40.101
 	  libavdevice    56.  4.100 / 56.  4.100
-	  libavfilter     5. 16.101 /  5. 16.101
+	  libavfilter     5. 40.101 /  5. 40.101
 	  libavresample   2.  1.  0 /  2.  1.  0
 	  libswscale      3.  1.101 /  3.  1.101
-	  libswresample   1.  2.100 /  1.  2.100
+	  libswresample   1.  2.101 /  1.  2.101
 	  libpostproc    53.  3.100 / 53.  3.100
 	Hyper fast Audio and Video encoder
 	usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfi
@@ -129,6 +130,7 @@
 	-colors             show available color names
 	-sources device     list sources of the input device
 	-sinks device       list sinks of the output device
+	-hwaccels           show available HW acceleration methods
 	
 	Global options (affect whole program instead of just one file:
 	-loglevel loglevel  set logging level
@@ -155,11 +157,12 @@
 	-to time_stop       record or transcode stop time
 	-fs limit_size      set the limit file size in bytes
 	-ss time_off        set the start time offset
+	-sseof time_off     set the start time offset relative to EOF
 	-seek_timestamp     enable/disable seeking by timestamp with -ss
 	-timestamp time     set the recording timestamp ('now' to set the current time)
 	-metadata string=string  add metadata
-	-target type        specify target file type ("vcd", "svcd", "dvd", "dv", "dv50"
-	, "pal-vcd", "ntsc-svcd", ...)
+	-target type        specify target file type ("vcd", "svcd", "dvd", "dv" or "dv5
+	0" with optional prefixes "pal-", "ntsc-" or "film-")
 	-apad               audio pad
 	-frames number      set the number of frames to output
 	-filter filter_graph  set stream filtergraph

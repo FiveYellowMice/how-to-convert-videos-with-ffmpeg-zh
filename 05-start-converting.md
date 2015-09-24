@@ -62,6 +62,8 @@ FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输�
 
 它们的意思是： Matroska 封装格式，通常的后缀名为 `mkv` ，[MIME](https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E9%80%94%E4%BA%92%E8%81%AF%E7%B6%B2%E9%83%B5%E4%BB%B6%E6%93%B4%E5%B1%95) 为 `video/x-matroska` ，默认视频编码为 `h264` ，默认音频编码为 `vorbis` ，默认字幕编码为 `ass` 。如果你的[英语水平没问题](03-execute.md#中文是世界上最美的语言但是)，读懂这些将轻而易举。
 
+-	 **注意：** FFmpeg 的版本不同，各种封装格式的默认编码器也有可能不同，请[确认](03-execute.md#查看帮助)你所拥有的 FFmpeg 是最新版本的。
+
 [H264](https://zh.wikipedia.org/wiki/H.264/MPEG-4_AVC) 和 [Vorbis](https://zh.wikipedia.org/wiki/Vorbis) 都是两种十分流行的编码，大部分播放器都可以播放。不过，如果我想使用 Matroska 作为封装格式，但使用 [HEVC](https://zh.wikipedia.org/wiki/%E9%AB%98%E6%95%88%E7%8E%87%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81) 作为视频编码，该怎么办呢？
 
 快使用“帮助大法”，执行 `ffmpeg -help` 查看帮助！  
@@ -92,6 +94,10 @@ FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输�
 	也就是说， `ffmpeg -i Tor_Animation_en.mp4 -vcodec hevc -acodec opus tor.mkv` 可以写为 `ffmpeg -i Tor_Animation_en.mp4 -c:v hevc -c:a opus tor.mkv` ，两者没有任何区别。  
 	使用这样的小把戏可以省下打几个字母的时间。以后我举例也一直都会用这种简单的写法。
 
+---------------------------
+
 ## 照它说的做
+
+
 
 ## 学会看输出
