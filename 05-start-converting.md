@@ -98,6 +98,26 @@ FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输�
 
 ## 照它说的做
 
+[AAC](https://zh.wikipedia.org/wiki/%E9%80%B2%E9%9A%8E%E9%9F%B3%E8%A8%8A%E7%B7%A8%E7%A2%BC) 是一种被十分广泛使用的音频编码，也是 [MP4](https://zh.wikipedia.org/wiki/MP4) 封装格式的默认音频编码。 FFmpeg 当然也对此提供了支持。那么现在我将我的视频转换为 Matroska 封装格式， HEVC 视频编码， AAC 音频编码吧！
 
+可是，我在运行 `ffmpeg -i ffmpeg -i Tor_Animation_en.mp4 -c:v hevc -c:a aac tor.mkv` 的时候，它出错了，还以红色字体显示：
+
+	[aac @ 0x55fcc749c580] The encoder 'aac' is experimental but experimental codecs
+	are not enabled, add '-strict -2' if you want to use it.
+
+这是什么情况？难道 FFmpeg 不支持 AAC 吗？  
+当然不是，忽略程序给出的错误提示不是个可取的行为，我们来看一看这条错误提示吧！
+
+它说，编码器 `aac` 是实验性的，但是它没有被启用，如果你想使用他的话就加上 `-strict -2` 。
+
+既然 FFmpeg 告诉了我们要加上 `-strict -2` ，那我们就照他说的做，在输出文件之前加上这两个选项。不用管它究竟是什么意思，加就是了。
+
+	ffmpeg -i Tor_Animation_en.mp4 -c:v hevc -c:a aac -strict -2 tor.mkv
+
+好，这样就顺利完成了。
+
+FFmpeg 在出错的时候总会尽它的一切力量来减少你的麻烦，在它能做到的时候，甚至会手把手告诉你如何来解决，而且它的解决方式也通常是最有效的。即使它不能，也会给出详细的错误信息，方便你找到问题、上网搜索或请教别人。
+
+>	人生苦短，我看错误提示。
 
 ## 学会看输出
