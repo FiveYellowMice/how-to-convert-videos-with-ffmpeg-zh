@@ -20,10 +20,10 @@
 	5.	[中文是世界上最美的语言，但是……](03-execute.md#中文是世界上最美的语言但是)
 4.	[媒体文件的结构](04-media-file-structure.md)
 5.	[开始转码](05-start-converting.md)
-	1.	简单的文件输入与输出
-	2.	指定编码器
-	3.	照它说的做
-	4.	学会看输出
+	1.	[简单的文件输入与输出](05-start-converting.md#简单的文件输入与输出)
+	2.	[指定编码器](05-start-converting.md#指定编码器)
+	3.	[照它说的做](05-start-converting.md#照它说的做)
+	4.	[学会看输出](05-start-converting.md#学会看输出)
 6.	转码时能顺便一起做的事情
 	1.	音频
 	2.	视频
