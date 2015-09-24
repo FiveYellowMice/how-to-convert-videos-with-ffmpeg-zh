@@ -2,19 +2,23 @@
 
 FFmpeg 是一个使用广泛的开源多媒体编解码器，其一大用途就是进行音频或视频的编码及格式转换。
 
-我编写本教程的目标在于，为简体中文用户提供一个简单的、快速的 FFmpeg 入门教程。读完本教程之后，你就可以用它来进行大部分媒体转换工作，如果想要深入，也可以阅读 FFmpeg 官方文档。
+FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资料实在太少，才造成了这样的表象。所以，我决定动手开启这个计划，为中文用户提供一个更简单易学的 FFmpeg 教程。
 
-FFmpeg 并不是一个像 Adobe&reg; Photoshop&reg; 一样的需要大量知识的专业软件，只是从表面上看起来像。如果你拥有极佳的英语水平，网上可用的简单入门资料非常多，即使是 FFmpeg 官方文档也不难。但是中文资料极其缺乏，也导致了其门槛变得很高。
+不过本教程只能让你成为 FFmpeg 用户，不能让你成为 FFmpeg 专家，专家的那些东西我也不明白。不过就大多数情况而言，你一辈子也用不到那些专家的东西。即使偶然用到， Google 足够作为你的伙伴了。
 
-这个教程目前还没有完成，但是你也可以[点击这里](index.md)来在线阅读未完成的版本。
+## 开始阅读
 
-对于更喜欢繁体中文的用户，我只能说声抱歉了，[这里](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&tl=zh-TW&u=https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh&usg=ALkJrhj2iCEscmVtHKMRB9IRBDrZg50f8g)是一个可行的解决方法。
+1.	[在线阅读](index.md)  
+	这样可以读到最新的版本，但是可能方便程度要差一些。
 
-## 参与
+2.	[下载电子书](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/releases/latest)  
+	这样就可以随时随地阅读了，不过内容可能会旧一些。
 
-如果你有任何的意见和建议，请点击右边的 "Issues" ，查看是否有与你相同问题存在，如果没有，点 "New Issue" 新建一个。
+## 支持
 
-如果你想自己动手帮我写，你可能需要一点 Git 知识以及 GitHub 的使用方法，然后 Fork 这个库，动手写，再发 Pull Request 。
+如果你有意见或建议，请按照[最后一章](10-write-in-end.md)的步骤来提交问题。
+
+如果你觉得我值得鼓励，点一下右上方的 Star 吧！
 
 ----------------------
 
