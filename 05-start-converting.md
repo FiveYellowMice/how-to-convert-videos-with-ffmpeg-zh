@@ -1,5 +1,6 @@
 # 开始转码
 
+<a name="simple-io"></a>
 ## 简单的文件输入与输出
 
 >	用 FFmpeg 来执行简单的格式转换出奇的简单！你不相信吗？来试一试就知道了！
@@ -8,7 +9,7 @@
 
 我这里使用 [Tor](https://zh.wikipedia.org/wiki/Tor) 的介绍视频来作为例子，可以从[这个页面](https://blog.torproject.org/blog/releasing-tor-animation)来下载到，我所选择的是 [English HQ](https://media.torproject.org/video/2015-03-animation/HQ/Tor_Animation_en.mp4) 版本。当然，如我刚刚所说，你没有必要非得使用这个视频。
 
-假设这个视频已经下载到了你的电脑硬盘中，并存放在 `/home/alex/Downloads/` 这个目录里面，而且 FFmpeg 已经[安装](02-download-and-install.md)到你的电脑中。那么现在[打开终端](03-execute.md#查看帮助)，然后使用 `cd` 命令转到文件所在的位置，比如在我的情况下，运行 `cd /home/alex/Downloads/` ，它不会有任何输出。
+假设这个视频已经下载到了你的电脑硬盘中，并存放在 `/home/alex/Downloads/` 这个目录里面，而且 FFmpeg 已经[安装](02-download-and-install.md)到你的电脑中。那么现在[打开终端](03-execute.md#look-help)，然后使用 `cd` 命令转到文件所在的位置，比如在我的情况下，运行 `cd /home/alex/Downloads/` ，它不会有任何输出。
 
 -	 **注意：** 如果文件路径包含空格或一些特殊字符，请使用半角引号（ `'` 或 `"` ）将路径名包起来，比如如果文件在 `/home/alex/path with space/` ，执行 `cd "/home/alex/path with space/"` 而 **不是** `cd /home/alex/path with space/` 。
 
@@ -21,7 +22,7 @@
 
 ![运行 cd 和 ls](image/cd-ls.png)
 
-接下来输入 `ffmpeg` 但不要回车，我们要使用 `-i` [选项](03-execute.md#选项与参数)来指定输入文件。  
+接下来输入 `ffmpeg` 但不要回车，我们要使用 `-i` [选项](03-execute.md#options-and-arguments)来指定输入文件。  
 输入文件是什么？就是我们要转换的文件呀！比如我在此处要转换的文件叫做 `Tor_Animation_en.mp4` ，我就再往命令行中打 `-i Tor_Animation_en.mp4` 。
 
 在指定了输入文件之后，我们还要指定一个输出文件，不然 FFmpeg 把转换出来的文件保存在哪儿呢？  
@@ -46,6 +47,7 @@
 现在，你闪闪发亮的输出文件已经保存在原来的目录中了。在我这里，这个 `tor.mkv` 就是转换后的输出文件。  
 ![在文件管理器中看到两个文件](image/files-in-explorer.png)
 
+<a name="specify-codec"></a>
 ## 指定编码器
 
 FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输出文件的后缀名来判断其封装格式。同时， FFmpeg 也会根据该种封装格式的默认编码来决定输出文件的编码。
@@ -59,9 +61,9 @@ FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输�
 	    Default audio codec: vorbis.
 	    Default subtitle codec: ass.
 
-它们的意思是： Matroska 封装格式，通常的后缀名为 `mkv` ，[MIME](https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E9%80%94%E4%BA%92%E8%81%AF%E7%B6%B2%E9%83%B5%E4%BB%B6%E6%93%B4%E5%B1%95) 为 `video/x-matroska` ，默认视频编码为 `h264` ，默认音频编码为 `vorbis` ，默认字幕编码为 `ass` 。如果你的[英语水平没问题](03-execute.md#中文是世界上最美的语言但是)，读懂这些将轻而易举。
+它们的意思是： Matroska 封装格式，通常的后缀名为 `mkv` ，[MIME](https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E9%80%94%E4%BA%92%E8%81%AF%E7%B6%B2%E9%83%B5%E4%BB%B6%E6%93%B4%E5%B1%95) 为 `video/x-matroska` ，默认视频编码为 `h264` ，默认音频编码为 `vorbis` ，默认字幕编码为 `ass` 。如果你的[英语水平没问题](03-execute.md#chinese-is-most-beautiful-but)，读懂这些将轻而易举。
 
--	 **注意：** FFmpeg 的版本不同，各种封装格式的默认编码器也有可能不同，请[确认](03-execute.md#查看帮助)你所拥有的 FFmpeg 是最新版本的。
+-	 **注意：** FFmpeg 的版本不同，各种封装格式的默认编码器也有可能不同，请[确认](03-execute.md#look-help)你所拥有的 FFmpeg 是最新版本的。
 
 [H264](https://zh.wikipedia.org/wiki/H.264/MPEG-4_AVC) 和 [Vorbis](https://zh.wikipedia.org/wiki/Vorbis) 都是两种十分流行的编码，大部分播放器都可以播放。不过，如果我想使用 Matroska 作为封装格式，但使用 [HEVC](https://zh.wikipedia.org/wiki/%E9%AB%98%E6%95%88%E7%8E%87%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81) 作为视频编码，该怎么办呢？
 
@@ -93,6 +95,7 @@ FFmpeg 会自动判断输入文件的封装格式以及编码，并且根据输�
 	也就是说， `ffmpeg -i Tor_Animation_en.mp4 -vcodec hevc -acodec opus tor.mkv` 可以写为 `ffmpeg -i Tor_Animation_en.mp4 -c:v hevc -c:a opus tor.mkv` ，两者没有任何区别。  
 	使用这样的小把戏可以省下打几个字母的时间。以后我举例也一直都会用这种简单的写法。
 
+<a name="do-what-it-says"></a>
 ## 照它说的做
 
 [AAC](https://zh.wikipedia.org/wiki/%E9%80%B2%E9%9A%8E%E9%9F%B3%E8%A8%8A%E7%B7%A8%E7%A2%BC) 是一种被十分广泛使用的音频编码，也是 [MP4](https://zh.wikipedia.org/wiki/MP4) 封装格式的默认音频编码。 FFmpeg 当然也对此提供了支持。那么现在我将我的视频转换为 Matroska 封装格式， HEVC 视频编码， AAC 音频编码吧！
@@ -117,6 +120,7 @@ FFmpeg 在出错的时候总会尽它的一切力量来减少你的麻烦，在�
 
 >	人生苦短，我看错误提示。
 
+<a name="learn-to-look-output"></a>
 ## 学会看输出
 
 别看 FFmpeg 只有一条命令来让用户完成操作，实际上，它告诉你的信息多的令人惊讶！
