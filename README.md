@@ -13,7 +13,7 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 
 2.	[下载电子书](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/releases/latest)  
 	这样就可以随时随地阅读了，不过内容可能会旧一些。  
-	有 HTML, ePub, PDF, AZW3 这 4 种格式可供下载。
+	有 HTML ( ZIP 压缩 ), ePub, PDF, AZW3 这 4 种格式可供下载。
 
 ## 支持
 
