@@ -9,7 +9,8 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 ## 开始阅读
 
 1.	[在线阅读](index.md)  
-	这样可以读到最新的版本，但是可能方便程度要差一些。
+	这样可以直接用浏览器进行阅读，但可能不是特别方便。  
+	在线阅读也能够读到最新的内容，因为我不会每做一次修改或增加一些内容就重新制作电子书。
 
 2.	[下载电子书](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/releases/latest)  
 	这样就可以随时随地阅读了，不过内容可能会旧一些。  
