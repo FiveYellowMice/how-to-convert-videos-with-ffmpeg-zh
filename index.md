@@ -37,10 +37,10 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 	2.	[指定编码器](05-start-converting.md#specify-codec)
 	3.	[照它说的做](05-start-converting.md#do-what-it-says)
 	4.	[学会看输出](05-start-converting.md#learn-to-look-output)
-6.	转码时能顺便一起做的事情
-	1.	音频
-	2.	视频
-	3.	整体
+6.	[转码时能顺便一起做的事情](06-do-in-passing-while-converting.md)
+	1.	[音频](06-do-in-passing-while-converting.md#audio)
+	2.	[视频](06-do-in-passing-while-converting.md#video)
+	3.	[整体](06-do-in-passing-while-converting.md#general)
 7.	字幕
 	1.	作为字幕流
 	2.	编入视频流
