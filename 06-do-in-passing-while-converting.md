@@ -54,5 +54,46 @@
 <a name="video"></a>
 ## 视频
 
+在 `ffmpeg -help` 的输出中，我们也能找到这样一段信息：
+
+	Video options:
+	-vframes number     set the number of video frames to output
+	-r rate             set frame rate (Hz value, fraction or abbreviation)
+	-s size             set frame size (WxH or abbreviation)
+	-aspect aspect      set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)
+	-bits_per_raw_sample number  set the number of bits per raw sample
+	-vn                 disable video
+	-vcodec codec       force video codec ('copy' to copy stream)
+	-timecode hh:mm:ss[:;.]ff  set initial TimeCode value.
+	-pass n             select the pass number (1 to 3)
+	-vf filter_graph    set video filters
+	-ab bitrate         audio bitrate (please use -b:a)
+	-b bitrate          video bitrate (please use -b:v)
+	-dn                 disable data
+
+同样的，实用为先，我在这里只挑 `-r`, `-s`, `-vn` 这几个选项来讲。
+
+### -r
+
+`-r` 选项可以指定视频的[帧率](https://zh.wikipedia.org/wiki/%E5%B8%A7%E7%8E%87)，其参数的单位是 Hz ，也就是我们平常所说的“帧每秒”（ FPS ）。比如 `-r 24` 即代表输出视频的帧率为每秒 24 帧。
+
+当然，视频的帧率跟音频的采样率一样，只能变小不能变大。
+
+### -s
+
+这个选项可以指定视频的尺寸，以像素为单位。这个选项的参数由 `宽度x高度` 的格式填写。比如如果要把视频转为 720P （也就是宽度 1280 像素，高度 720 像素），就写上 `-s 1280x720` 。没错，中间用小写字母 `x` 分隔两个数字。
+
+下面的例子会将输出文件视频的帧率指定为 15 帧每秒，画面尺寸 1280x720 ：
+
+	ffmpeg -i input.mp4 -r 15 -s 1280x720 output.mkv
+
+### -vn
+
+与 `-an` 选项一样，在命令中加入了这个选项之后，视频内容便会被去除。也就是说，只把音频剥离出来。比如，把 `video.mp4` 这个视频中的音频提取出来，保存为 `audio.mp3` ，指定音频编码为 `mp3` ，将使用这样一个命令：
+
+	ffmpeg -i video.mp4 -vn -c:a mp3 audio.mp3
+
+-	 **提示：** `.mp3` 封装格式的默认音频编码已经是 `mp3` ，我在这里写 `-c:a mp3` 其实是多此一举。
+
 <a name="general"></a>
 ## 整体
