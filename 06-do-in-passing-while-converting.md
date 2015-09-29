@@ -207,5 +207,6 @@
 
 	ffmpeg -i input -c:v -ss -t 10 -ss -c:a 1280x720 vp9 1:00 opus -s output.webm
 
-看完了这些说明，我想你就应该能够熟练地掌握命令行的规则了。
+看完了这些说明，我想你就应该能够熟练地掌握命令行的规则了。后面的内容依然还在编写中，如果想要获知最新的更新，请关注这个计划的 [GitHub Repository](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 。
 
+对了，也看一看[最后一章](10-write-in-end.md)。
