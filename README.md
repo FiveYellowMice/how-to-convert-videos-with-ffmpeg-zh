@@ -13,7 +13,7 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 	在线阅读也能够读到最新的内容，因为我不会每做一次修改或增加一些内容就重新制作电子书。
 
 2.	[下载电子书](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/releases/latest)  
-	这样就可以随时随地阅读了，不过内容可能会旧一些。  
+	这样就可以随时随地阅读了，不过内容可能会[旧一些](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh/compare/v0.1...master "点此查看电子书与在线阅读的区别")。  
 	有 HTML ( ZIP 压缩 ), ePUB, PDF, AZW3 这 4 种格式可供下载。
 
 ## 支持
