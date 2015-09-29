@@ -97,3 +97,99 @@
 
 <a name="general"></a>
 ## 整体
+
+除了仅仅针对媒体流的选项以外，还有一些针对整个媒体文件的调整选项。那么我们现在 `ffmpeg -help` 的输出中找到这样一段内容：
+
+	Per-file main options:
+	-f fmt              force format
+	-c codec            codec name
+	-codec codec        codec name
+	-pre preset         preset name
+	-map_metadata outfile[,metadata]:infile[,metadata]  set metadata information of 
+	outfile from infile
+	-t duration         record or transcode "duration" seconds of audio/video
+	-to time_stop       record or transcode stop time
+	-fs limit_size      set the limit file size in bytes
+	-ss time_off        set the start time offset
+	-sseof time_off     set the start time offset relative to EOF
+	-seek_timestamp     enable/disable seeking by timestamp with -ss
+	-timestamp time     set the recording timestamp ('now' to set the current time)
+	-metadata string=string  add metadata
+	-target type        specify target file type ("vcd", "svcd", "dvd", "dv" or "dv5
+	0" with optional prefixes "pal-", "ntsc-" or "film-")
+	-apad               audio pad
+	-frames number      set the number of frames to output
+	-filter filter_graph  set stream filtergraph
+	-filter_script filename  read stream filtergraph description from a file
+	-reinit_filter      reinit filtergraph on input parameter changes
+	-discard            discard
+	-disposition        disposition
+
+我在这里将会挑选 `-c`, `-t`, `-ss`, `-metadata` 这几个选项来讲。
+
+### -c
+
+其实这个选项我们在[第 5 章第 2 节](05-start-converting.md#specify-codec)的最后已经讲过了，不过我觉得有必要再做一次详细的说明。
+
+`-c` 选项用来指定输出文件的编码，但跟 `-vcodec` 和 `-acodec` 不同的是，它指定的是全部媒体流的编码而不是单独一个视频流或音频流。在通常情况下，这是行不通的，因为视频编码和音频编码是两种不同的东西，怎么能是同一个呢？
+
+但是，我们可以通过在 `-c` 后面紧挨着加上 `:v` 成为 `-c:v` 来表示指定视频编码，紧挨着加上 `:a` 成为 `-c:a` 来表示指定音频编码。也就跟 `-vcodec` 和 `-acodec` 同样了。不过 `-c:a`, `-c:a` 的写法比 `-vcodec`, `-acodec` 的写法要短，所以我喜欢用前者。
+
+当然，单独的 `-c` 也是有用的，有什么用呢？
+
+还记得在编码器的地方指定 `copy` 来让 FFmpeg 不重新进行编码吗？众所周知，大部分视频或音频编码都是[有损压缩](https://zh.wikipedia.org/wiki/%E6%9C%89%E6%8D%9F%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9)，重新进行一次编码不但费时费力，还会产生无法挽回的画质/音质损失，损失一两次通常是人类很难判别的，但是次数多了差别就大了。所以，我们要尽量避免重新编码，能用 `copy` 作为“编码器”的时候就尽量使用它。
+
+让视频不重新编码的时候使用 `-c:v copy` ，让音频不重新编码的时候使用 `-c:a copy` 。那么在两个都要不重新编码的时候，就不用把这两条选项都写上去了，只要 `-c copy` 就足够。
+
+下面是一些例子：
+
+1.	将视频尺寸转换为 `1280x720` ，其他不变。  
+	因为视频的尺寸变了，所以视频不得不重新编码，但音频不用。
+	
+		ffmpeg -i input.mp4 -c:v h264 -c:a copy -s 1280x720 output.mp4
+
+2.	将音频的编码转换为 `libvorbis` ，其他不变  
+	音频的编码肯定得变，但是视频不用。
+	
+		ffmpeg -i input.mp4 -c:v copy -c:a libvorbis output.mp4
+
+3.	仅仅将 MP4 封装格式转换为 Matroska 封装格式。  
+	只是封装格式变了，视频和音频都不需要重新编码。
+	
+		ffmpeg -i input.mp4 -c copy output.mkv
+
+### -t
+
+这个选项用来指定输出文件的持续时间，以秒为单位，比如我想截取 `full.mp4` 这个视频的前 30 秒并保存为 `segment.mp4` ，就可以使用这个命令：
+
+	ffmpeg -i full.mp4 -c copy -t 30 segment.mp4
+
+-	 **注意：** 看到了 `-c copy` 了吗？因为我们只是进行截取，所以不需要进行重新编码。能不重新编码就尽量不要重新编码。
+
+这个选项的参数以秒为单位，但这并不意味着 5 分钟你就得写 `300` ， 1 个小时你就得写 `3600` ， 1 小时 23 分钟 45 秒你就得先拿出计算器得出 1&#x00d7;3600+23&#x00d7;60+45=5025 再写上 `5025` 。事实上，你只要写 `5:00` 就可以表示 5 分钟， `1:23:45` 就可以表示 1 小时 23 分钟 45 秒。
+
+你也可以写小数点，比如 `10.0268` 或者 `1:23:45.678` 。
+
+### -ss
+
+这个选项用来指定输出文件相对于输入文件的开始时间，比如我想把 `full.mp4` 这个视频的前 30 秒剪掉并把剩下的保存为 `segment.mp4` ，就可以使用这个命令：
+
+	ffmpeg -i full.mp4 -c copy -ss 30 segment.mp4
+
+`-ss` 选项也可以跟 `-t` 选项配合使用以截取媒体文件的一部分，比如如果我想截取 `full.mp4` 的 12 分 25 秒至 20 分 27 秒，保存为 `segment.mp4` ，使用这条命令。
+
+	ffmpeg -i full.mp4 -c copy -ss 12:25 -t 8:02 segment.mp4
+
+-	 **注意：** `-t` 选项后面的参数并不是结束时间而是持续时间，所以在上面的例子中我写的不是 `20:27` 而是 20:27-12:25 的结果， `8:02` 。
+
+### -metadata
+
+这个选项说的很明白了，它所更改的就是输出文件的[元数据](https://zh.wikipedia.org/wiki/%E5%85%83%E6%95%B0%E6%8D%AE)，比如一首歌的标题、艺术家、专辑。比如 `-metadata title="我是标题"` 就会把输出文件的标题元数据改为 `我是标题` 。 `-metadata` 选项可以多次指定以更改多个元数据。
+
+举个例子，把 `no metadata.mp3` 的标题改成 `一首歌` ，艺术家改成 `一位艺术家` ，专辑改成 `一张专辑` ，然后保存为 `with metadata.mp3` ：
+
+	ffmpeg -i "no metadata.mp3" -c copy -metadata title="一首歌" -metadata artist="一位艺术家" -metadata album="一张专辑" "with metadata.mp3"
+
+-	 **提示：** 还记得吗？在文件名包含空格或其他特殊字符的时候，必须用半角双引号包起来。
+
+---------------------------
