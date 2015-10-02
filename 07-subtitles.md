@@ -43,3 +43,6 @@
 同样的， `-c` 选项除了会影响到视频流和音频流以外，也会影响到字幕流，也就是说，指定 `-c copy` 也会让 FFmpeg 不对字幕流进行重新编码。
 
 你甚至可以将字幕文件作为单独的输入文件！也就是对字幕文件进行转码，比如 `ffmpeg -i Tor_animation.zh-CN.srt Tor_animation.zh-CN.ass` 就会将 SubRip 字幕转换为 ASS 字幕。（因为 ASS 封装格式的默认字幕编码就是 `ass` ，所以你在这条命令中不用写 `-c:s ass` ）
+
+<a name="encode-to-video"></a>
+## 编入视频流

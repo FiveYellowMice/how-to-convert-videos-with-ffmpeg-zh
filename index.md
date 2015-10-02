@@ -41,9 +41,9 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 	1.	[音频](06-do-in-passing-while-converting.md#audio)
 	2.	[视频](06-do-in-passing-while-converting.md#video)
 	3.	[整体](06-do-in-passing-while-converting.md#general)
-7.	字幕
-	1.	作为字幕流
-	2.	编入视频流
+7.	[字幕](07-subtitles.md)
+	1.	[作为字幕流](07-subtitles.md#as-subtitle-stream)
+	2.	[编入视频流](07-subtitles.md#encode-to-video)
 8.	不同编码器特有的设定
 	1.	H264
 	2.	学会看文档
