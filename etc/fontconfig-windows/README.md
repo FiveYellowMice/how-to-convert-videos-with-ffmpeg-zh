@@ -14,7 +14,7 @@ FFmpeg 在找字体的时候，会使用一个叫做 [Fontconfig](https://zh.wik
 
 `fonts.conf` 是 Fontconfig 用来存储其配置的文件，在 Linux 下它已经存在与系统中了，而在 Microsoft&reg; Windows&reg; 下没有。
 
-因为没有，所以我们就得自己写一个，好在已经有现成的了，右键另存为[这个链接](fonts.conf)，你就可以直接使用它而不用自己写一个。将这个文件放到 `C:\\Users\用户名\` 里，比如如果你的用户名叫 Alex ，就放到 `C:\\Users\Alex\` 里面。
+因为没有，所以我们就得自己写一个，好在已经有现成的了。将[这个文件](fonts.conf)的内容复制并保存为文本文件，命名为 `fonts.conf` 。将这个文件放到 `C:\\Users\用户名\` 里，比如如果你的用户名叫 Alex ，就放到 `C:\\Users\Alex\` 里面。
 
 -	 **Windows XP ：** 文件应该放到 `C:\\Documents and Settings\用户名\` 里面。
 
