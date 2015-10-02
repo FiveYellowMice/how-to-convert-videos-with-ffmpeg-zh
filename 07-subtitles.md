@@ -69,3 +69,9 @@
 
 接下来，你就可以享受在视频中看到字幕的便捷了。  
 ![SMPlayer 正在播放带字幕的视频](image/video-with-subtitles.png)
+
+-----------------------
+
+后面的内容依然还在编写中，如果想要获知最新的更新，请关注这个计划的 [GitHub Repository](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 。
+
+对了，也看一看[最后一章](10-write-in-end.md)。
