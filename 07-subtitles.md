@@ -36,7 +36,7 @@
 
 它很直观地告诉我，在本次操作中， 0 号输入文件（也就是 `Tor_Animation_en.mp4` ）中的 0 号媒体流变成了 0 号输出文件的 0 号媒体流， 0 号输入文件中的 1 号媒体流变成了 0 号输出文件的 1 号媒体流， 1 号输入文件（也就是 `Tor_animation.zh-CN.srt` ）的 0 号媒体流变成了 0 号输出文件的 2 号媒体流。编码的转换也被清晰地显示了出来。
 
-因为字幕流也是媒体流，也有各种编码，所以，我们也可以通过 `-scodec` 或 `-c:s` 选项来指定字幕流的编码。这个例子可以让 FFmpeg 复制视频流和音频流，而将字幕流转换为 `ass` 编码：
+因为字幕流也是媒体流，也有各种编码，所以，我们也可以通过 `-scodec` 或 `-c:s` 选项来指定字幕流的编码。这个例子可以让 FFmpeg 复制视频流和音频流（不用重新编码，加快了速度），而将字幕流转换为 `ass` 编码：
 
 	ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt -c:v copy -c:a copy -c:s ass Tor_Animation_subtitled.mkv
 
@@ -46,3 +46,26 @@
 
 <a name="encode-to-video"></a>
 ## 编入视频流
+
+虽然字幕流是一个很方便的东西，但是由于一些差的播放器不支持字幕流，字幕流也的显示也取决于播放器所使用的字体，所以在很多时候，我们需要将字幕放到视频内容中，而不是独立于视频流的字幕流。
+
+-	 **注意：** 因为这样做会改写视频流，所以原本视频中被字幕覆盖的地方就无法再被显示出来了。
+
+在开始之前我们先要介绍一下 `-vf` 选项，在 `ffmpeg -help` 中，它是这样被说明的：
+
+	-vf filter_graph    set video filters
+
+这个选项被用来给视频添加滤镜，就像图像处理软件的滤镜一样，有颠倒、放大、改变颜色、模糊之类的东西。用 `ffmpeg -filters` 可以查看 FFmpeg 支持的滤镜。
+
+我们要在视频流上面加上字幕，就得使用一个叫做 `subtitles` 的滤镜，要使用这个滤镜，在命令中写上 `-vf subtitles=字幕文件名` ，还是要注意，如果文件名包含空格或其他特殊字符，得用半角引号包起来： `-vf subtitles="字幕 文件名"` 。
+
+那么我想将 `Tor_animation.zh-CN.srt` 中的字幕写入 `Tor_Animation_en.mp4` 的视频流中，就使用这条命令：
+
+	ffmpeg -i Tor_Animation_en.mp4 -vf subtitles=Tor_animation.zh-CN.srt -c:a copy Tor_Animation_subtitled.mp4
+
+-	 **提示：** 因为这个操作改写了视频流，所以视频流必须得重新编码。在上面这个例子中，我没有使用 `-c:v` 选项， FFmpeg 则会使用 MP4 封装格式的默认视频编码 `h264` 。
+
+-	 **注意：** 如果你使用的是~~遭天谴~~的 Microsoft&reg; Windows&reg; ， FFmpeg 会在写视频流的时候无法找到字体，而导致输出文件中没有任何字幕，要解决这个问题，请参阅[这篇文章]()。
+
+接下来，你就可以享受在视频中看到字幕的便捷了。  
+![SMPlayer 正在播放带字幕的视频](image/video-with-subtitles.png)
