@@ -21,7 +21,7 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 	1.	[丑话说在前头](01-write-in-front.md#unpleasant-words-in-front)
 	2.	[FFmpeg 是什么，我为什么要用它？](01-write-in-front.md#what-is-ffmpeg-why-use-it)
 2.	[下载与安装](02-download-and-install.md)
-	1.	[Linux](02-download-and-install.md#linux)
+	1.	[GNU/Linux](02-download-and-install.md#gnu-linux)
 	2.	[Mac OS X&reg;](02-download-and-install.md#mac-os-x)
 	3.	[Microsoft&reg; Windows&reg;](02-download-and-install.md#microsoft-windows)
 	4.	[手机、平板、树莓派……](02-download-and-install.md#phone-tablet-rasppi)

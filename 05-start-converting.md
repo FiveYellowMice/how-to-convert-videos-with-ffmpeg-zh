@@ -18,7 +18,7 @@
 		cd D:\\Downloads\
 		D:
 
-`cd` 完了之后，如果你有强迫症想要检查一下是否真的已经切换到目标目录去了，可以运行 `ls` （ Linux, Mac OS X&reg; ）或 `dir` （ Microsoft&reg; Windows&reg; ）。只要显示出来的确实是那个目录里的文件，就说明没有问题，你可以放心继续。
+`cd` 完了之后，如果你有强迫症想要检查一下是否真的已经切换到目标目录去了，可以运行 `ls` （ GNU/Linux, Mac OS X&reg; ）或 `dir` （ Microsoft&reg; Windows&reg; ）。只要显示出来的确实是那个目录里的文件，就说明没有问题，你可以放心继续。
 
 ![运行 cd 和 ls](image/cd-ls.png)
 

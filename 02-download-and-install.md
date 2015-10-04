@@ -1,15 +1,15 @@
 # 下载与安装
 
-<a name="linux"></a>
-## Linux
+<a name="gnu-linux"></a>
+## GNU/Linux
 
-得益于 Linux 上强大的包管理系统，在 Linux 中安装 FFmpeg 非常简单。但由于各种发行版采用的包管理器不同，安装时需要执行的命令也不同，以下列举三种最常见的包管理器安装 FFmpeg时所需的命令，全部需要在 root 账户或者 `sudo` 后执行：
+得益于 GNU/Linux 上强大的包管理系统，在 GNU/Linux 中安装 FFmpeg 非常简单。但由于各种发行版采用的包管理器不同，安装时需要执行的命令也不同，以下列举三种最常见的包管理器安装 FFmpeg时所需的命令，全部需要在 root 账户或者 `sudo` 后执行：
 
 -	Debian, Ubuntu, Linux Mint  
 	
 		apt-get install libav-tools
 	
-	**Debian 及其衍生版用户注意：**因为一些历史原因， Debian 及其衍生版上是没有一个叫做 `ffmpeg` 的软件包的，确认代之的是 `libav-tools` ，需要执行的命令也是 `avconv` 而不是 `ffmpeg` 。以后将不会重复说明，请将后面的 `ffmpeg` 命令自行脑补成 `avconv` 。
+	**Debian 及其衍生版用户注意：** 因为一些历史原因， Debian 及其衍生版上是没有一个叫做 `ffmpeg` 的软件包的，确认代之的是 `libav-tools` ，需要执行的命令也是 `avconv` 而不是 `ffmpeg` 。以后将不会重复说明，请将后面的 `ffmpeg` 命令自行脑补成 `avconv` 。
 
 -	Fedora, CentOS, RHEL
 	
@@ -74,7 +74,7 @@
 
 所以转码工作最好还是在电脑上进行。
 
-[树莓派](https://zh.wikipedia.org/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE)是一个特殊的存在，它并不是一台如我们想象中一样的 x86 电脑，但是它可以当作一台性能和能耗较低的电脑来使用。它预装的操作系统是 Raspbian ， Debian 的一个衍生版，在它上面的安装请参考上面关于 Linux 的说明。
+[树莓派](https://zh.wikipedia.org/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE)是一个特殊的存在，它并不是一台如我们想象中一样的 x86 电脑，但是它可以当作一台性能和能耗较低的电脑来使用。它预装的操作系统是 Raspbian ， Debian 的一个衍生版，在它上面的安装请参考上面关于 GNU/Linux 的说明。
 
 ------------------------
 
