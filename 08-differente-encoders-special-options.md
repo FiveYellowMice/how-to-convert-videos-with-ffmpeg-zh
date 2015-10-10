@@ -23,10 +23,17 @@ CRF 值是倍数，也就是说把 CRF 增大 6 的话，文件就会变成原�
 
 通常选定预设的方法是使用你能忍受的最慢的预设。目前的这些预设从快到慢排列有： `ultrafast`, `superfast`, `veryfast`, `faster`, `fast`, `medium`, `slow`, `slower`, `veryslow`, `placebo` 。默认是 `medium` ， `placebo` 通常没有用所以请无视它。
 
-决定好了 CRF 值和预设之后，你就可以使用 `-crf` 选项来指定 CRF 值， `-preset` 选项来指定预设了。下面的例子是使用 `22` 作为 CRF 值， `slow` 作为预设转码：
+决定好了 CRF 值和预设之后，你就可以使用 `-crf` 选项来指定 CRF 值， `-preset` 选项来指定预设了。下面的例子是使用 `22` 作为 CRF 值， `slow` 作为预设来进行转码：
 
     ffmpeg -i input.mp4 -c:v h264 -crf 22 -preset slow -c:a copy output.mkv
 
 ### 指定平均比特率
 
-使用 `-b:v` 选项可以让 FFmpeg 为 H264 或 HEVC 编码的视频指定一个平均的码率，这样就可以控制最终的文件大小了。比如要让平均码率为 1000 Kb ，就写上 `-b:v 1000k` 。不过这个选项不能与 `-crf` 选项同时使用。
+使用 `-b:v` 选项可以让 FFmpeg 为 H264 或 HEVC 编码的视频指定一个平均的比特率，这样就可以控制最终的文件大小了。比如要让平均比特率为 1000 Kb ，就写上 `-b:v 1000k` 。
+
+不过这个选项不能与 `-crf` 选项同时使用，因为实际上指定 CRF 值就是让编码器自动评判出一个平均的码率。
+
+## VP9
+
+[VP9](https://zh.wikipedia.org/wiki/VP9) 是 Google 为 WebM 格式所开发出的一种视频编码，专门为在线串流视频设计。全世界最大的视频网站 [YouTube](https://www.youtube.com) 默认使用的视频编码就是 VP9 。同样的，它也拥有许多选项来使编码变得更有效。
+
