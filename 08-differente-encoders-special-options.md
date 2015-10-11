@@ -69,3 +69,9 @@ FFmpeg 的[官方文档](https://ffmpeg.org/documentation.html)是最权威不�
 以上的东西全部都是英文的，所以也[没办法](03-execute.md#chinese-is-most-beautiful-but)。要是有中文的文档，我也就不会写这个教程了。
 
 还有一个十分高效的方法是使用 [Google](https://www.google.com) 来搜索，你可以将你的关键词写成 `ffmpeg blablabla` ，最好用英文来搜索。按下回车后也许你就能找到你想要的内容了。至于为什么是 Google 而非百度，这不是[不言自明](http://www.zhihu.com/question/20140749)的嘛。
+
+-----------------------
+
+读到这里，我想你就能很舒服地玩转 FFmpeg 了，而其他的转码软件再也不那么重要了。后面我还要写一些 FFmpeg 能做的许多其他事情，到那时候基本上许多其他转码软件都可以见鬼去了。不过它依然还在编写中，如果想要获知最新的更新，请关注这个计划的 [GitHub Repository](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 。
+
+对了，也看一看[最后一章](10-write-in-end.md)。
