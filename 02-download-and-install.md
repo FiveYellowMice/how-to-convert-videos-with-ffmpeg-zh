@@ -9,7 +9,7 @@
 	
 		apt-get install libav-tools
 	
-	**Debian 及其衍生版用户注意：** 因为一些历史原因， Debian 及其衍生版上是没有一个叫做 `ffmpeg` 的软件包的，确认代之的是 `libav-tools` ，需要执行的命令也是 `avconv` 而不是 `ffmpeg` 。以后将不会重复说明，请将后面的 `ffmpeg` 命令自行脑补成 `avconv` 。
+	**Debian 及其衍生版用户注意：** 因为一些历史原因， Debian 及其衍生版上是没有一个叫做 `ffmpeg` 的软件包的，取而代之的是 `libav-tools` ，需要执行的命令也是 `avconv` 而不是 `ffmpeg` 。以后将不会重复说明，请将后面的 `ffmpeg` 命令自行脑补成 `avconv` 。
 
 -	Fedora, CentOS, RHEL
 	
@@ -58,9 +58,11 @@
 
 首先你需要知道 [你的电脑是 32 位还是 64 位](https://support.microsoft.com/zh-cn/kb/827218)。
 
-然后访问 <http://ffmpeg.zeranoe.com/builds/> ，你可以看到许多灰色的按钮。如果你的电脑是 32 位，点最上面一行左边的按钮 "Download FFmpeg git-xxxxxxx 32-bit Static" ，如果是 64 位，点右边的 "Download FFmpeg git-xxxxxxx 64-bit Static" 。解压。
+然后访问 <http://ffmpeg.zeranoe.com/builds/> ，你可以看到许多灰色的按钮。如果你的电脑是 32 位，点最上面一行左边的按钮 "Download FFmpeg git-xxxxxxx 32-bit Static" ，如果是 64 位，点右边的 "Download FFmpeg git-xxxxxxx 64-bit Static" 。
 
-双击 ff-prompt.bat ，如果出现了如下的界面，并且最后一行可以进行输入，则表示没有问题。  
+解压。
+
+双击 `ff-prompt.bat` ，如果出现了如下的界面，并且最后一行可以进行输入，则表示没有问题。  
 ![ff-prompt](image/windows-ff-prompt.png)
 
 它是一个绿色软件，你可以直接在这个窗口中执行接下来会讲到的命令。但为了方便，我推荐你进行“手动安装”。
