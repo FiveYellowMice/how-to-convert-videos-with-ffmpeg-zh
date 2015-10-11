@@ -59,7 +59,7 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 	1.	[作为字幕流](07-subtitles.md#as-subtitle-stream)
 	2.	[编入视频流](07-subtitles.md#encode-to-video)
 8.	[不同编码器特有的设定](08-differente-encoders-special-options.md)
-	1.	[H264/HEVC](08-differente-encoders-special-options.md#h264-and-hevc)
+	1.	[H264 和 HEVC](08-differente-encoders-special-options.md#h264-and-hevc)
 		1.	[衡流量系数 (CRF)](08-differente-encoders-special-options.md#constant-rate-factor)
 		2.	[指定平均比特率](08-differente-encoders-special-options.md#specify-average-bitrate)
 	2.	[VP9](08-differente-encoders-special-options.md#vp9)
