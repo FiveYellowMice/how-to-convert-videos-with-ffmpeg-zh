@@ -67,4 +67,10 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 		2.	[稳定画质](08-differente-encoders-special-options.md#constant-quality)
 	3.	[学会看文档](08-differente-encoders-special-options.md#learn-to-look-document)
 9.	不仅能转码
+	1.	合并两段视频
+	2.	批量处理
+	3.	翻录 CD
+	4.	硬件加速
+	5.	自己动手分配媒体流
+	6.	控制文件大小
 10.	[写在最后](10-write-in-end.md)
