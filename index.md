@@ -66,8 +66,8 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 		1.	[平均比特率](08-differente-encoders-special-options.md#average-bitrate)
 		2.	[稳定画质](08-differente-encoders-special-options.md#constant-quality)
 	3.	[学会看文档](08-differente-encoders-special-options.md#learn-to-look-document)
-9.	不仅能转码
-	1.	合并两段视频
+9.	[不仅能转码](09-not-only-converting.md)
+	1.	[合并两段视频](09-not-only-converting.md#merge-two-videos)
 	2.	批量处理
 	3.	翻录 CD
 	4.	硬件加速
