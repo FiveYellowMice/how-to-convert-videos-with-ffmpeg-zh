@@ -69,6 +69,6 @@ FFmpeg 并不像它表面看上去那么高端，那么难。只是中文的资�
 9.	[不仅能转码](09-not-only-converting.md)
 	1.	[合并两段视频](09-not-only-converting.md#merge-two-videos)
 	2.	[批量处理](09-not-only-converting.md#batch-process)
-	3.	自己动手分配媒体流
+	3.	[自己动手分配媒体流](09-not-only-converting.md#map-streams-manually)
 	4.	控制文件大小
 10.	[写在最后](10-write-in-end.md)
