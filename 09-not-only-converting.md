@@ -28,3 +28,22 @@ FFmpeg 能够被用来进行简单或复杂的视频转码，可它的功能并�
 	file 'third file.mp4'
 	...
 
+<a name="batch-process"></a>
+## 批量处理
+
+命令行工具的一大好处就是它可以很方便地被写进脚本中，以此进行批量处理，在 GNU/Linux 和 Mac OS X 上，你可以创建一个文本文件，随便取个名字，在里面逐行写上想要执行的命令，比如：
+
+	ffmpeg -i a.mp4 a.mkv
+	ffmpeg -i b.mp4 b.mkv
+
+之后用 `sh 脚本文件名` 执行这个脚本，它就会依次执行 `ffmpeg -i a.mp4 a.mkv` 和 `ffmpeg -i b.mp4 b.mkv` 两条命令了。
+
+在 Microsoft Windows 中也是如此，不过文件名必须得以 `.bat` 结尾，并且以双击的方式来执行脚本。
+
+你也可以在脚本中使用 “for 循环” 来对许多文件名有规律的媒体文件进行转码，比如像这样（仅限 GNU/Linux 和 Max OS X ）：
+
+	for i in "听爸爸的话 第{01..04}话"; do
+		ffmpeg -i "${i}.mkv" -c copy "${i}.mp4"
+	done
+
+就会把 “听爸爸的话” 第 01 到 04 话从 MKV 转到 MP4 封装格式。不过因为这东西不属于 FFmpeg 的范畴，所以我在这里不打算详细说明，按照上面的例子生搬硬套也应该能满足大部分需求。
