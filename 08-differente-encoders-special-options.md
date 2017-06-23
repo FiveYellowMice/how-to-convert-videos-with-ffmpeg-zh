@@ -4,14 +4,12 @@ FFmpeg 支持很多种媒体编码器，这些媒体编码器当然都不会是�
 
 *部分功能可能仅在 GNU/Linux 上有效。*
 
-<a name="h264-and-hevc"></a>
 ## H264 和 HEVC
 
 毫无疑问， H264 是目前最流行的视频编码了，现在我们在网上见到的几乎所有视频都是使用 H264 进行视频编码的，不管它的封装格式是 MP4 、 Matroska 还是 FLV 。而它为什么会变得如此流行呢？除了较高的效率，丰富的编码器选项也是它的优点之一。
 
 HEVC 是 H264 的后继版本，又称 H265 ，它提供了一个更高的压缩比，不过目前有许多差的播放器不支持这种编码，所以请小心使用。
 
-<a name="constant-rate-factor"></a>
 ### 恒流量系数 (CRF)
 
 这种方式可以让编码器尽量保持一定的画面质量，而文件的大小就不是那么重要了，这种方式为单通道的方式提供了最大的压缩比。每一帧都会得到能保证其质量等级的比特率。它的坏处是你无法确认最终会得到的具体文件大小或保证它不超过一定的尺寸。
@@ -28,26 +26,22 @@ CRF 值是倍数，也就是说把 CRF 增大 6 的话，文件就会变成原�
 
     ffmpeg -i input.mp4 -c:v h264 -crf 22 -preset slow -c:a copy output.mkv
 
-<a name="specify-average-bitrate"></a>
 ### 指定平均比特率
 
 使用 `-b:v` 选项可以让 FFmpeg 为 H264 或 HEVC 编码的视频指定一个平均的比特率，这样就可以控制最终的文件大小了。比如要让平均比特率为 1000 KBit/s ，就写上 `-b:v 1000k` 。
 
 不过这个选项不能与 `-crf` 选项同时使用，因为实际上指定 CRF 值就是让编码器自动评判出一个平均的码率。
 
-<a name="vp9"></a>
 ## VP9
 
 [VP9](https://zh.wikipedia.org/wiki/VP9) 是 Google 为 WebM 格式所开发出的一种视频编码，专门为在线串流视频设计。全世界最大的视频网站 [YouTube](https://www.youtube.com) 默认使用的视频编码就是 VP9 。同样的，它也拥有许多选项来使编码变得更有效。
 
-<a name="average-bitrate"></a>
 ### 平均比特率
 
 与 H264 和 HEVC 一样， VP9 默认使用的是动态比特率，同样我们也可以用 `-b:v` 选项来指定其平均的比特率，比如我想让视频的平均比特率为 1 MBit/s ，就使用这条命令：
 
     ffmpeg -i input.mp4 -c:v vp9 -b:v 1m output.webm
 
-<a name="constant-quality"></a>
 ### 稳定画质
 
 VP9 编码也提供了一种方式让视频保证一定画质，与 H264 和 HEVC 一样使用的是 `-crf` 参数，不过与 H264 和 HEVC 不同的是， VP9 的 CRF 值范围是 0-63 。
@@ -56,7 +50,6 @@ VP9 编码也提供了一种方式让视频保证一定画质，与 H264 和 HEV
 
     ffmpeg -i input.mp4 -c:v vp9 -crf 10 -b:v 0 output.webm
 
-<a name="learn-to-look-document"></a>
 ## 学会看文档
 
 实际上， H264 、 HEVC 以及 VP9 还有许多令人惊奇的功能，不过这些功能对于大多数人而言实用性并不强，所以我只挑了几个最容易理解且常用的功能写在了这一章里。同样的，除了 H264 、 HEVC 和 VP9 以外，也有许多编码器有各种各样的功能。
@@ -70,7 +63,7 @@ VP9 编码也提供了一种方式让视频保证一定画质，与 H264 和 HEV
 
 FFmpeg 的[官方文档](https://ffmpeg.org/documentation.html)是最权威不过的了，里面的信息非常的多，除了我在这个教程中所使用的 `ffmpeg` 转码工具以外，还有许多别的东西。在页面中点 "Command Line Tools Documentation"下面的 "ffmpeg" 链接就可以看到对于 `ffmpeg` 转码工具的文档。除此之外， FFmpeg 还有一个[官方 Wiki](https://trac.ffmpeg.org/wiki) ，里面都是一些网友贡献的内容，所以有些内容可能比较过时了，不过还是很有参考价值的。
 
-以上的东西全部都是英文的，所以也[没办法](03-execute.md#chinese-is-most-beautiful-but)。要是有中文的文档，我也就不会写这个教程了。
+以上的东西全部都是英文的，所以也[没办法](03-execute.md#中文是世界上最美的语言，但是)。要是有中文的文档，我也就不会写这个教程了。
 
 还有一个十分高效的方法是使用 [Google](https://www.google.com) 来搜索，你可以将你的关键词写成 `ffmpeg blablabla` ，最好用英文来搜索。按下回车后也许你就能找到你想要的内容了。至于为什么是 Google 而非百度，这不是[不言自明](http://www.zhihu.com/question/20140749)的嘛。
 

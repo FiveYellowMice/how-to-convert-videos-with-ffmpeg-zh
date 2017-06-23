@@ -10,7 +10,6 @@
 
 但是这样做很麻烦，也很容易在拷贝或下载时忘记。所以，使用 FFmpeg 将字幕放到视频里吧！
 
-<a name="as-subtitle-stream"></a>
 ## 作为字幕流
 
 如[第 4 章](04-media-file-structure.md)中所说，媒体文件是由多个 **媒体流** 组成的，我们已经对视频流和音频流很熟悉了，但在这一节，我们将认识另一种媒体流——字幕流。 **字幕流独立于视频流** ，所以它可以随时开关，就像声音可以被静音一样。
@@ -27,7 +26,7 @@
 
 -	 **提示：** 顺带一提， Matroska 和 WebM 封装格式都是支持字幕流的。
 
-在[第 5 章第 4 节](05-start-converting.md#learn-to-look-output)中，我们知道了可以在 FFmpeg 开始转码时查看媒体流的分布（ Stream mapping ），我在执行 `ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt Tor_Animation_subtitled.mkv` 的时候，就会看到这样的输出：
+在[第 5 章第 4 节](05-start-converting.md#学会看输出)中，我们知道了可以在 FFmpeg 开始转码时查看媒体流的分布（ Stream mapping ），我在执行 `ffmpeg -i Tor_Animation_en.mp4 -i Tor_animation.zh-CN.srt Tor_Animation_subtitled.mkv` 的时候，就会看到这样的输出：
 
 	Stream mapping:
 	  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
@@ -44,7 +43,6 @@
 
 你甚至可以将字幕文件作为单独的输入文件！也就是对字幕文件进行转码，比如 `ffmpeg -i Tor_animation.zh-CN.srt Tor_animation.zh-CN.ass` 就会将 SubRip 字幕转换为 ASS 字幕。（因为 ASS 封装格式的默认字幕编码就是 `ass` ，所以你在这条命令中不用写 `-c:s ass` ）
 
-<a name="encode-to-video"></a>
 ## 编入视频流
 
 虽然字幕流是一个很方便的东西，但是由于一些差的播放器不支持字幕流，字幕流也的显示也取决于播放器所使用的字体，所以在很多时候，我们需要将字幕放到视频内容中，而不是独立于视频流的字幕流。

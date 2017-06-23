@@ -1,6 +1,5 @@
 # 下载与安装
 
-<a name="gnu-linux"></a>
 ## GNU/Linux
 
 得益于 GNU/Linux 上强大的包管理系统，在 GNU/Linux 中安装 FFmpeg 非常简单。但由于各种发行版采用的包管理器不同，安装时需要执行的命令也不同，以下列举三种最常见的包管理器安装 FFmpeg时所需的命令，全部需要在 root 账户或者 `sudo` 后执行：
@@ -23,14 +22,12 @@
 
 实际上，在你看到这篇文章之前，你的电脑中很可能已经安装好了 FFmpeg ，在这种情况下，包管理器会提示已经安装。
 
-<a name="mac-os-x"></a>
 ## Mac OS X&reg;
 
 *由于作者缺少对此操作系统的了解，所写的信息可能不准确，本节内容或许需要了解它的人对其进行完善和修改。*
 
 在 Mac OS X&reg; 上安装 FFmpeg 有两种方式：第三方包管理器以及手动安装。
 
-<a name="third-party-package-manager"></a>
 ### 第三方包管理器
 
 如果你的电脑中已经安装了 [Homebrew](http://brew.sh/) ，可以使用以下命令安装：
@@ -41,7 +38,6 @@
 
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-<a name="manual-install"></a>
 ### 手动安装
 
 访问 <http://evermeet.cx/ffmpeg/> ，你会看到 FFmpeg 标签下有一左一右两个绿色的下载按钮，左边版本更新，右边则更稳定，凭你的喜好，点哪个都可以。
@@ -53,7 +49,6 @@
 
 此时在终端中执行 `ffmpeg` ，如果出来的内容不是 `bash: ffmpeg: command not found` ，就说明安装成功了！
 
-<a name="microsoft-windows"></a>
 ## Microsoft&reg; Windows&reg;
 
 首先你需要知道 [你的电脑是 32 位还是 64 位](https://support.microsoft.com/zh-cn/kb/827218)。
@@ -69,7 +64,6 @@
 双击解压出来的 bin 目录，可以看到 3 个 .exe 文件，将它们选中，复制到 `C:\\Windows\system32\` 中，此操作可能需要管理员权限。  
 然后在[命令提示符](https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E5%AD%97%E5%85%83)中输入 `ffmpeg` ，如果出来的不是 `"ffmpeg" 不是一个文件或内部命令`，则说明安装成功！
 
-<a name="phone-tablet-rasppi"></a>
 ## 手机、平板、树莓派……
 
 虽然理论上 FFmpeg 可以在移动平台运行，但是目前移动端上十分缺乏此类应用。封闭的 iOS 就不提了，在 Android 上有一个[以 FFmpeg 为核心的转码应用](https://play.google.com/store/apps/details?id=com.silentlexx.ffmpeggui)，但是功能严重不全，操作方式也大不相同。
