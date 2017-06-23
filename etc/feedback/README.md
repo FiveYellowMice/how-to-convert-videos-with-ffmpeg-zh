@@ -18,7 +18,7 @@
 
 2.	如果你发现教程中的一些步骤无法被执行，请先上网搜索，这是否是一些其他的原因导致的问题。如果是的话，那就不怪我了。
 
-3.	如果你想知道更高深的内容，那或许反馈问题让我加上不是一个好主意，关于这点，可以看看第 8 章中的[学会看文档](08-differente-encoders-special-options.md#learn-to-look-document)一节。
+3.	如果你想知道更高深的内容，那或许反馈问题让我加上不是一个好主意，关于这点，可以看看第 8 章中的[学会看文档](08-differente-encoders-special-options.md#学会看文档)一节。
 
 4.	如果你身处中国大陆，并发现这个教程中有一些外部超链接无法打开，请不要立即将其认为是我的失误，请[检查你的互联网连接](https://fiveyellowmice.github.io/onscripter-tutorial/cant-open.html)。在解决连接问题后，再看看是否打得开。
 
